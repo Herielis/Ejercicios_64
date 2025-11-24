@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Tabla de Multiplicar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 3: Tabla de Multiplicar</h1>
+        <p><strong>Descripción:</strong> Desarrolla un programa que pida al usuario un número y muestre la tabla de multiplicar de ese número usando un ciclo for.</p>
+        
+        <button onclick="ejecutar()">Ejecutar Ejercicio</button>
+        <button class="back-btn" onclick="window.location.href='../menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function ejecutar() {
+            const numero = prompt("Ingresa un número para ver su tabla de multiplicar:");
+            const num = parseInt(numero);
+            
+            if (isNaN(num)) {
+                document.getElementById('output').innerHTML = 
+                    `❌ <strong>Error:</strong> Debes ingresar un número válido`;
+                return;
+            }
+            
+            let resultado = `✅ <strong>Tabla de multiplicar del ${num}:</strong><br><br>`;
+            
+            for (let i = 1; i <= 10; i++) {
+                resultado += `${num} x ${i} = ${num * i}<br>`;
+            }
+            
+            document.getElementById('output').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

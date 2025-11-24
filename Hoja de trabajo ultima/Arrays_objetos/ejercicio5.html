@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ARRAYS DE OBJETOS 2 - Libros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio ARRAYS DE OBJETOS 5: Libros</h1>
+        <p><strong>Descripción:</strong> Crea un array de objetos libro, con las propiedades título y autor. Muestra los títulos de todos los libros.</p>
+        
+        <button onclick="mostrarTitulos()">Mostrar Títulos</button>
+        <button class="back-btn" onclick="window.location.href='menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        const libros = [
+            { titulo: "Cien años de soledad", autor: "Gabriel García Márquez" },
+            { titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes" },
+            { titulo: "1984", autor: "George Orwell" },
+            { titulo: "El amor en los tiempos del cólera", autor: "Gabriel García Márquez" },
+            { titulo: "La sombra del viento", autor: "Carlos Ruiz Zafón" }
+        ];
+        
+        function mostrarTitulos() {
+            let resultado = '✅ <strong>Títulos de todos los libros:</strong><br><br>';
+            
+            for (let i = 0; i < libros.length; i++) {
+                resultado += `📚 ${libros[i].titulo} - <em>${libros[i].autor}</em><br>`;
+            }
+            
+            document.getElementById('output').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

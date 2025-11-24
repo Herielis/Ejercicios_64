@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4 - Mayor Ternario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 4: Mayor de Dos con Ternario</h1>
+        <p><strong>Descripción:</strong> Desarrolla un programa que pida dos números y muestre cuál es mayor, usando un operador ternario.</p>
+        
+        <button onclick="ejecutar()">Ejecutar Ejercicio</button>
+        <button class="back-btn" onclick="window.location.href='../menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function ejecutar() {
+            const num1 = prompt("Ingresa el primer número:");
+            const num2 = prompt("Ingresa el segundo número:");
+            
+            const n1 = parseFloat(num1);
+            const n2 = parseFloat(num2);
+            
+            if (isNaN(n1) || isNaN(n2)) {
+                document.getElementById('output').innerHTML = 
+                    `❌ <strong>Error:</strong> Debes ingresar números válidos`;
+                return;
+            }
+            
+            const mayor = n1 > n2 ? n1 : n2;
+            const mensaje = n1 > n2 ? `${n1} es mayor que ${n2}` : 
+                           n1 < n2 ? `${n2} es mayor que ${n1}` : 
+                           "Ambos números son iguales";
+            
+            document.getElementById('output').innerHTML = 
+                `<strong>Números ingresados:</strong> ${n1} y ${n2}<br><br>` +
+                `<strong>${mensaje}</strong><br><br>` +
+                `<em>Operador ternario usado</em>`;
+        }
+    </script>
+</body>
+</html>

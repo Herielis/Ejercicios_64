@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Día Semana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 1: Día de la Semana (Switch)</h1>
+        <p><strong>Descripción:</strong> Escribe un programa que pida un número del 1 al 7 y muestre el día de la semana correspondiente (1: Lunes, 7: Domingo).</p>
+        
+        <button onclick="ejecutar()">Ejecutar Ejercicio</button>
+        <button class="back-btn" onclick="window.location.href='../menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function ejecutar() {
+            const numero = prompt("Ingresa un número del 1 al 7:");
+            const dia = parseInt(numero);
+            let nombreDia;
+            
+            switch(dia) {
+                case 1:
+                    nombreDia = "Lunes";
+                    break;
+                case 2:
+                    nombreDia = "Martes";
+                    break;
+                case 3:
+                    nombreDia = "Miércoles";
+                    break;
+                case 4:
+                    nombreDia = "Jueves";
+                    break;
+                case 5:
+                    nombreDia = "Viernes";
+                    break;
+                case 6:
+                    nombreDia = "Sábado";
+                    break;
+                case 7:
+                    nombreDia = "Domingo";
+                    break;
+                default:
+                    nombreDia = "❌ Número inválido (debe ser 1-7)";
+            }
+            
+            document.getElementById('output').innerHTML = 
+                `<strong>Número ingresado:</strong> ${numero}<br><br>` +
+                `<strong>Día de la semana:</strong> ${nombreDia}`;
+        }
+    </script>
+</body>
+</html>

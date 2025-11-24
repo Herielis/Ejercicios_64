@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio ARRAYS 4 - Contar Mayores a 50</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            margin: 10px 5px;
+            width: 150px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio ARRAYS 4: Contar Mayores a 50</h1>
+        <p><strong>Descripción:</strong> Haz un programa que pida 10 números al usuario y muestre cuántos son mayores a 50.</p>
+        
+        <input type="number" id="numero" placeholder="Número">
+        <button onclick="agregarNumero()">Agregar Número</button>
+        <button onclick="reiniciar()" style="background: #dc3545;">Reiniciar</button>
+        <button class="back-btn" onclick="window.location.href='menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output">Ingresa 10 números</div>
+    </div>
+
+    <script>
+        let numeros = [];
+        
+        function agregarNumero() {
+            if (numeros.length >= 10) {
+                document.getElementById('output').innerHTML = 
+                    '⚠️ Ya ingresaste 10 números. Presiona Reiniciar para comenzar de nuevo.';
+                return;
+            }
+            
+            const num = parseFloat(document.getElementById('numero').value);
+            
+            if (isNaN(num)) {
+                alert('Por favor ingresa un número válido');
+                return;
+            }
+            
+            numeros.push(num);
+            document.getElementById('numero').value = '';
+            
+            if (numeros.length < 10) {
+                document.getElementById('output').innerHTML = 
+                    `📊 Números ingresados (${numeros.length}/10):<br><br>` +
+                    numeros.join(', ');
+            } else {
+                let mayoresA50 = 0;
+                for (let i = 0; i < numeros.length; i++) {
+                    if (numeros[i] > 50) {
+                        mayoresA50++;
+                    }
+                }
+                
+                document.getElementById('output').innerHTML = 
+                    '🎉 <strong>¡Completado!</strong><br><br>' +
+                    `📊 <strong>Números ingresados:</strong> ${numeros.join(', ')}<br><br>` +
+                    `✅ <strong>Números mayores a 50:</strong> ${mayoresA50}`;
+            }
+        }
+        
+        function reiniciar() {
+            numeros = [];
+            document.getElementById('numero').value = '';
+            document.getElementById('output').innerHTML = 'Ingresa 10 números';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal - Ejercicios JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d0d0e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .category {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        .category h2 {
+            color: #4b8ea2;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .exercise-list {
+            list-style: none;
+        }
+        .exercise-list li {
+            margin: 10px 0;
+        }
+        .exercise-list a {
+            display: block;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border-left: 4px solid #667eea;
+        }
+        .exercise-list a:hover {
+            background: #667eea;
+            color: white;
+            padding-left: 25px;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-left: 10px;
+        }
+        .download-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>68 Ejercicios de JavaScript</h1>
+            <p>Colección completa de ejercicios prácticos</p>
+        </div>
+
+        <div class="categories">
+            <!-- SALIDAS A PANTALLA -->
+            <div class="category">
+                <h2> Salidas a Pantalla <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Salidas_html/ejercicio1.html">1. Mensaje de bienvenida</a></li>
+                    <li><a href="Salidas_html/ejercicio2.html">2. Suma de dos números</a></li>
+                    <li><a href="Salidas_html/ejercicio3.html">3. Pedir nombre y saludar</a></li>
+                    <li><a href="Salidas_html/ejercicio4.html">4. Mostrar variable</a></li>
+                    <li><a href="Salidas_html/ejercicio5.html">5. Fecha actual</a></li>
+                    <li><a href="Salidas_html/ejercicio6.html">6. Hola Mundo</a></li>
+                </ul>
+            </div>
+              
+
+                    <!-- VARIABLES -->
+            <div class="category">
+                <h2> Variables <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Variables_html/ejercicio1.html">1. Nombre, edad y ciudad</a></li>
+                    <li><a href="Variables_html/ejercicio2.html">2. Valor de PI</a></li>
+                    <li><a href="Variables_html/ejercicio3.html">3. Número y string</a></li>
+                    <li><a href="Variables_html/ejercicio4.html">4. Multiplicación</a></li>
+                    <li><a href="Variables_html/ejercicio5.html">5. Edad del usuario</a></li>
+                    <li><a href="Variables_html/ejercicio6.html">6. Nombre completo</a></li>
+                </ul>
+            </div>
+
+              <!-- FUNCIONES -->
+            <div class="category">
+                <h2> Funciones <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Funciones_html/ejercicio1.html">1. Suma de números</a></li>
+                    <li><a href="Funciones_html/ejercicio2.html">2. Saludo personalizado</a></li>
+                    <li><a href="Funciones_html/ejercicio3.html">3. Área de círculo</a></li>
+                    <li><a href="Funciones_html/ejercicio4.html">4. Número mayor</a></li>
+                    <li><a href="Funciones_html/ejercicio5.html">5. Par o impar</a></li>
+                    <li><a href="Funciones_html/ejercicio6.html">6. Promedio de array</a></li>
+                </ul>
+            </div>
+
+               <!-- ESTRUCUTRA DE CONDICIONALES-->
+            <div class="category">
+                <h2>🔄 If-Else <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Estructura_condicionales/ejercicio1.html">1. Temperatura</a></li>
+                    <li><a href="Estructura_condicionales/ejercicio2.html">2. Mayor/menor edad</a></li>
+                    <li><a href="Estructura_condicionales/ejercicio3.html">3. Par o impar</a></li>
+                    <li><a href="Estructura_condicionales/ejercicio4.html">4. Examen aprobado</a></li>
+                    <li><a href="Estructura_condicionales/ejercicio5.html">5. Signo del número</a></li>
+                </ul>
+            </div>
+
+               <!-- CONDICIONAL if -->
+            <div class="category">
+                <h2> Condicionales if <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Condicionales_if_html/ejercicio1.html">1. Calificación aprobado</a></li>
+                    <li><a href="Condicionales_if_html/ejercicio2.html">2. Positivo/negativo/cero</a></li>
+                    <li><a href="Condicionales_if_html/ejercicio3.html">3. Día de la semana</a></li>
+                    <li><a href="Condicionales_if_html/ejercicio4.html">4. Mayor de dos (ternario)</a></li>
+                    <li><a href="Condicionales_if_html/ejercicio5.html">5. Mayor de edad</a></li>
+                    <li><a href="Condicionales_if_html/ejercicio6.html">6. Divisible por 3 o 5</a></li>
+                </ul>
+            </div>
+
+               <!-- IF ELSE -->
+            <div class="category">
+                <h2>Condicional If <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Condicionales_if_else/ejercicio1.html">1. Mayor que 10</a></li>
+                    <li><a href="Condicionales_if_else/ejercicio2.html">2. Mayor de 18</a></li>
+                    <li><a href="Condicionales_if_else/ejercicio3.html">3. Calificación > 50</a></li>
+                    <li><a href="Condicionales_if_else/ejercicio4.html">4. Número positivo</a></li>
+                    <li><a href="Condicionales_if_else/ejercicio5.html">5. Comparar dos números</a></li>
+                </ul>
+            </div>
+
+              <!-- SWITCH -->
+            <div class="category">
+                <h2>Switch <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="switch/ejercicio1.html">1. Día de semana</a></li>
+                    <li><a href="switch/ejercicio2.html">2. Calificación letras</a></li>
+                    <li><a href="switch/ejercicio3.html">3. Mes del año</a></li>
+                    <li><a href="switch/ejercicio4.html">4. Par/impar switch</a></li>
+                    <li><a href="switch/ejercicio5.html">5. Semáforo</a></li>
+                </ul>
+            </div>
+
+               <!-- OPERADOR TERNARIO -->
+            <div class="category">
+                <h2> Operador Ternario <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Operador_ternario_html/ejercicio1.html">1. Mayor de edad</a></li>
+                    <li><a href="Operador_ternario_html/ejercicio2.html">2. Par o impar</a></li>
+                    <li><a href="Operador_ternario_html/ejercicio3.html">3. Mayor de dos</a></li>
+                    <li><a href="Operador_ternario_html/ejercicio4.html">4. Calor o frío</a></li>
+                    <li><a href="Operador_ternario_html/ejercicio5.html">5. Puede votar</a></li>
+                </ul>
+            </div>
+
+            
+            <!-- CICLOS -->
+            <div class="category">
+                <h2> Ciclos <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Ciclos_html/ejercicio1.html">1. Números 1-10 (for)</a></li>
+                    <li><a href="Ciclos_html/ejercicio2.html">2. Suma 1-100 (while)</a></li>
+                    <li><a href="Ciclos_html/ejercicio3.html">3. Tabla multiplicar</a></li>
+                    <li><a href="Ciclos_html/ejercicio4.html">4. Números pares</a></li>
+                    <li><a href="Ciclos_html/ejercicio5.html">5. Do while</a></li>
+                    <li><a href="Ciclos_html/ejercicio6.html">6. Contar letra 'a'</a></li>
+                </ul>
+            </div>
+
+
+            <!-- OBJETOS -->
+            <div class="category">
+                <h2>Objetos <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Objetos_html/ejercicio1.html">1. Objeto persona</a></li>
+                    <li><a href="Objetos_html/ejercicio2.html">2. Objeto coche</a></li>
+                    <li><a href="Objetos_html/ejercicio3.html">3. Objeto rectángulo</a></li>
+                    <li><a href="Objetos_html/ejercicio4.html">4. Objeto libro</a></li>
+                    <li><a href="Objetos_html/ejercicio5.html">5. Objeto usuario</a></li>
+                    <li><a href="Objetos_html/ejercicio6.html">6. Objeto gato</a></li>
+                </ul>
+            </div>
+
+            <!-- ARRAYS -->
+            <div class="category">
+                <h2>Arrays <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Arrays_html/ejercicio1.html">1. Primer y último</a></li>
+                    <li><a href="Arrays_html/ejercicio2.html">2. Segunda ciudad</a></li>
+                    <li><a href="Arrays_html/ejercicio3.html">3. Suma de números</a></li>
+                    <li><a href="Arrays_html/ejercicio4.html">4. Recorrer palabras</a></li>
+                    <li><a href="Arrays_html/ejercicio5.html">5. Array de nombres</a></li>
+                    <li><a href="Arrays_html/ejercicio6.html">6. Mayores a 50</a></li>
+                </ul>
+            </div>
+
+            <!-- ARRAYS DE OBJETOS -->
+            <div class="category">
+                <h2>Arrays de Objetos <span class="badge"></span></h2>
+                <ul class="exercise-list">
+                    <li><a href="Arrays_objetos/ejercicio1.html">1. Array personas</a></li>
+                    <li><a href="Arrays_objetos/ejercicio2.html">2. Array coches</a></li>
+                    <li><a href="Arrays_objetos/ejercicio3.html">3. Productos precio</a></li>
+                    <li><a href="Arrays_objetos/ejercicio4.html">4. Alumnos aprobados</a></li>
+                    <li><a href="Arrays_objetos/ejercicio5.html">5. Títulos libros</a></li>
+                    <li><a href="Arrays_objetos/ejercicio6.html">6. Películas</a></li>
+                </ul>
+            </div>
+        </div>
+
+           
+    </div>
+</body>
+</html>

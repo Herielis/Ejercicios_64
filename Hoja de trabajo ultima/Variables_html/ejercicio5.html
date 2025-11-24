@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5 - Edad Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio 5: Pedir Edad del Usuario</h1>
+        <p><strong>Descripción:</strong> Escribe un programa que pida la edad del usuario y la almacene en una variable. Luego muestra un mensaje diciendo "Tienes [edad] años".</p>
+        
+        <button onclick="ejecutar()">Ejecutar Ejercicio</button>
+        <button class="back-btn" onclick="window.location.href='../menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function ejecutar() {
+            const edad = prompt("¿Cuál es tu edad?");
+            
+            if (!edad || isNaN(edad)) {
+                document.getElementById('output').innerHTML = 
+                    `❌ <strong>Error:</strong> Debes ingresar una edad válida`;
+                return;
+            }
+            
+            const edadNum = parseInt(edad);
+            
+            document.getElementById('output').innerHTML = 
+                `✅ <strong>Variable almacenada:</strong><br><br>` +
+                `const edad = ${edadNum}<br><br>` +
+                `<strong>Tienes ${edadNum} años</strong>`;
+        }
+    </script>
+</body>
+</html>

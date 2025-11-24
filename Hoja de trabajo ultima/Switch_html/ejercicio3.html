@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio SWITCH 2 - Mes del Año</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #764ba2;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            margin: 10px 5px;
+            width: 200px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .back-btn {
+            background: #667eea;
+        }
+        .back-btn:hover {
+            background: #764ba2;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ejercicio SWITCH 4: Mes del Año</h1>
+        <p><strong>Descripción:</strong> Desarrolla un programa que pida un número del 1 al 12 y muestre el mes correspondiente.</p>
+        
+        <input type="number" id="numero" placeholder="Número (1-12)" min="1" max="12">
+        <button onclick="mostrarMes()">Mostrar Mes</button>
+        <button class="back-btn" onclick="window.location.href='menu.html'">Volver al Menú</button>
+        
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        function mostrarMes() {
+            const num = parseInt(document.getElementById('numero').value);
+            let resultado = '';
+            
+            switch(num) {
+                case 1:
+                    resultado = '📅 <strong>Enero</strong>';
+                    break;
+                case 2:
+                    resultado = '📅 <strong>Febrero</strong>';
+                    break;
+                case 3:
+                    resultado = '📅 <strong>Marzo</strong>';
+                    break;
+                case 4:
+                    resultado = '📅 <strong>Abril</strong>';
+                    break;
+                case 5:
+                    resultado = '📅 <strong>Mayo</strong>';
+                    break;
+                case 6:
+                    resultado = '📅 <strong>Junio</strong>';
+                    break;
+                case 7:
+                    resultado = '📅 <strong>Julio</strong>';
+                    break;
+                case 8:
+                    resultado = '📅 <strong>Agosto</strong>';
+                    break;
+                case 9:
+                    resultado = '📅 <strong>Septiembre</strong>';
+                    break;
+                case 10:
+                    resultado = '📅 <strong>Octubre</strong>';
+                    break;
+                case 11:
+                    resultado = '📅 <strong>Noviembre</strong>';
+                    break;
+                case 12:
+                    resultado = '📅 <strong>Diciembre</strong>';
+                    break;
+                default:
+                    resultado = '❌ <strong>Número no válido. Ingresa un número del 1 al 12</strong>';
+            }
+            
+            document.getElementById('output').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
